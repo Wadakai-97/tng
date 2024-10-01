@@ -143,6 +143,7 @@ billing
 # 実装の始め方
 
 1. git clone https://github.com/Wadakai-97/tng.git
+※MAMPを使用する場合には、htdocs配下まで移動してからクローンすると便利です！
 
 2. 実装するシステムのsrcディレクトリに移動
 
