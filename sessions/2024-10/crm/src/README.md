@@ -5,3 +5,16 @@ composer create-project laravel/laravel="X.X.*" firstname-lastname
 # Reactで始める場合
 npx create-react-app firstname-lastname --template typescript
 例）名前が山田太郎の場合、 mkdir taro-yamada
+
+## アプリケーション起動
+npm start
+
+# Angularで始める場合
+ng new firstname-lastname
+例）名前が山田太郎の場合、 mkdir taro-yamada
+
+## コンポーネント作成
+ng generate component file-name
+
+## アプリケーション起動
+ng serve
