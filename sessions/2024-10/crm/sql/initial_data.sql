@@ -1,176 +1,171 @@
 -- 顧客情報の初期データを挿入
 INSERT INTO customers (
-    name, contact_info, address, email, phone_number, date_of_birth, gender, occupation, 
-    company_name, company_address, website, social_media_handles, preferences, 
-    purchase_history, notes, marital_status, number_of_children, annual_income, 
-    education_level, favorite_products, loyalty_points
+    name, email, phone_number, date_of_birth, gender, 
+    marital_status, number_of_children, annual_income, 
+    education_level, loyalty_points, created_at, updated_at
 )
 VALUES 
-(
-    '山田 太郎', 'yamada@example.com', '東京都新宿区1-1-1', 'yamada@example.com', '090-1234-5678', 
-    '1980-01-01', '男性', 'エンジニア', '株式会社サンプル', '東京都渋谷区2-2-2', 'http://example.com', 
-    '{"twitter": "@yamada"}', '{"color": "blue"}', '購入履歴1', 'メモ1', '独身', 0, 5000000, '大学卒', 
-    '{"product1": "A"}', 100
-),
-(
-    '佐藤 花子', 'sato@example.com', '東京都港区3-3-3', 'sato@example.com', '080-9876-5432', 
-    '1990-02-02', '女性', 'デザイナー', '株式会社デザイン', '東京都中央区4-4-4', 'http://design.com', 
-    '{"instagram": "@sato"}', '{"color": "red"}', '購入履歴2', 'メモ2', '既婚', 2, 6000000, '専門学校卒', 
-    '{"product2": "B"}', 200
-),
-(
-    '田中 一郎', 'tanaka@example.com', '東京都千代田区5-5-5', 'tanaka@example.com', '070-1111-2222', 
-    '1985-03-03', '男性', 'マーケティング', '株式会社マーケティング', '東京都品川区6-6-6', 
-    'http://marketing.com', '{"linkedin": "tanaka"}', '{"color": "green"}', '購入履歴3', 'メモ3', '離婚', 
-    1, 7000000, '大学院卒', '{"product3": "C"}', 300
-),
-(
-    '鈴木 次郎', 'suzuki@example.com', '東京都目黒区7-7-7', 'suzuki@example.com', '060-3333-4444', 
-    '1975-04-04', '男性', '営業', '株式会社営業', '東京都世田谷区8-8-8', 'http://sales.com', 
-    '{"facebook": "suzuki"}', '{"color": "yellow"}', '購入履歴4', 'メモ4', '未亡人', 3, 8000000, '高校卒', 
-    '{"product4": "D"}', 400
-),
-(
-    '高橋 三郎', 'takahashi@example.com', '東京都大田区9-9-9', 'takahashi@example.com', '050-5555-6666', 
-    '1995-05-05', '男性', '開発', '株式会社開発', '東京都練馬区10-10-10', 'http://development.com', 
-    '{"github": "takahashi"}', '{"color": "purple"}', '購入履歴5', 'メモ5', '独身', 0, 9000000, '専門学校卒', 
-    '{"product5": "E"}', 500
-),
-(
-    '伊藤 四郎', 'ito@example.com', '東京都杉並区11-11-11', 'ito@example.com', '040-7777-8888', 
-    '1988-06-06', '男性', 'コンサルタント', '株式会社コンサル', '東京都板橋区12-12-12', 
-    'http://consulting.com', '{"twitter": "@ito"}', '{"color": "orange"}', '購入履歴6', 'メモ6', '既婚', 
-    1, 10000000, '大学卒', '{"product6": "F"}', 600
-),
-(
-    '渡辺 五郎', 'watanabe@example.com', '東京都江東区13-13-13', 'watanabe@example.com', '030-9999-0000', 
-    '1970-07-07', '男性', 'プロジェクトマネージャー', '株式会社プロジェクト', '東京都葛飾区14-14-14', 
-    'http://project.com', '{"linkedin": "watanabe"}', '{"color": "pink"}', '購入履歴7', 'メモ7', '離婚', 
-    2, 11000000, '大学院卒', '{"product7": "G"}', 700
-),
-(
-    '中村 六郎', 'nakamura@example.com', '東京都江戸川区15-15-15', 'nakamura@example.com', '020-1111-2222', 
-    '1992-08-08', '男性', 'データサイエンティスト', '株式会社データ', '東京都北区16-16-16', 
-    'http://data.com', '{"instagram": "@nakamura"}', '{"color": "brown"}', '購入履歴8', 'メモ8', '独身', 
-    0, 12000000, '専門学校卒', '{"product8": "H"}', 800
-),
-(
-    '小林 七郎', 'kobayashi@example.com', '東京都荒川区17-17-17', 'kobayashi@example.com', '010-3333-4444', 
-    '1983-09-09', '男性', 'システムエンジニア', '株式会社システム', '東京都足立区18-18-18', 
-    'http://system.com', '{"facebook": "kobayashi"}', '{"color": "black"}', '購入履歴9', 'メモ9', '既婚', 
-    3, 13000000, '大学卒', '{"product9": "I"}', 900
-),
-(
-    '加藤 八郎', 'kato@example.com', '東京都台東区19-19-19', 'kato@example.com', '090-5555-6666', 
-    '1978-10-10', '男性', 'ネットワークエンジニア', '株式会社ネットワーク', '東京都墨田区20-20-20', 
-    'http://network.com', '{"github": "kato"}', '{"color": "white"}', '購入履歴10', 'メモ10', '未亡人', 
-    2, 14000000, '大学院卒', '{"product10": "J"}', 1000
-),
-(
-    '佐々木 九郎', 'sasaki@example.com', '東京都新宿区21-21-21', 'sasaki@example.com', '090-6666-7777', 
-    '1982-11-11', '男性', 'アナリスト', '株式会社アナリティクス', '東京都渋谷区22-22-22', 
-    'http://analytics.com', '{"twitter": "@sasaki"}', '{"color": "blue"}', '購入履歴11', 'メモ11', '独身', 
-    0, 15000000, '大学卒', '{"product11": "K"}', 1100
-),
-(
-    '山本 十郎', 'yamamoto@example.com', '東京都港区23-23-23', 'yamamoto@example.com', '080-8888-9999', 
-    '1991-12-12', '男性', 'デベロッパー', '株式会社デベロップ', '東京都中央区24-24-24', 
-    'http://develop.com', '{"instagram": "@yamamoto"}', '{"color": "red"}', '購入履歴12', 'メモ12', '既婚', 
-    2, 16000000, '専門学校卒', '{"product12": "L"}', 1200
-),
-(
-    '松本 十一郎', 'matsumoto@example.com', '東京都千代田区25-25-25', 'matsumoto@example.com', '070-2222-3333', 
-    '1986-01-01', '男性', 'プロデューサー', '株式会社プロデュース', '東京都品川区26-26-26', 
-    'http://produce.com', '{"linkedin": "matsumoto"}', '{"color": "green"}', '購入履歴13', 'メモ13', '離婚', 
-    1, 17000000, '大学院卒', '{"product13": "M"}', 1300
-),
-(
-    '井上 十二郎', 'inoue@example.com', '東京都目黒区27-27-27', 'inoue@example.com', '060-4444-5555', 
-    '1976-02-02', '男性', 'コーディネーター', '株式会社コーディネート', '東京都世田谷区28-28-28', 
-    'http://coordinate.com', '{"facebook": "inoue"}', '{"color": "yellow"}', '購入履歴14', 'メモ14', '未亡人', 
-    3, 18000000, '高校卒', '{"product14": "N"}', 1400
-),
-(
-    '木村 十三郎', 'kimura@example.com', '東京都大田区29-29-29', 'kimura@example.com', '050-6666-7777', 
-    '1996-03-03', '男性', 'ディレクター', '株式会社ディレクト', '東京都練馬区30-30-30', 
-    'http://direct.com', '{"github": "kimura"}', '{"color": "purple"}', '購入履歴15', 'メモ15', '独身', 
-    0, 19000000, '専門学校卒', '{"product15": "O"}', 1500
-),
-(
-    '林 十四郎', 'hayashi@example.com', '東京都杉並区31-31-31', 'hayashi@example.com', '040-8888-9999', 
-    '1989-04-04', '男性', 'プランナー', '株式会社プラン', '東京都板橋区32-32-32', 'http://plan.com', 
-    '{"twitter": "@hayashi"}', '{"color": "orange"}', '購入履歴16', 'メモ16', '既婚', 1, 20000000, '大学卒', 
-    '{"product16": "P"}', 1600
-),
-(
-    '清水 十五郎', 'shimizu@example.com', '東京都江東区33-33-33', 'shimizu@example.com', '030-0000-1111', 
-    '1971-05-05', '男性', 'アーキテクト', '株式会社アーキテクト', '東京都葛飾区34-34-34', 
-    'http://architect.com', '{"linkedin": "shimizu"}', '{"color": "pink"}', '購入履歴17', 'メモ17', '離婚', 
-    2, 21000000, '大学院卒', '{"product17": "Q"}', 1700
-),
-(
-    '森 十六郎', 'mori@example.com', '東京都江戸川区35-35-35', 'mori@example.com', '020-3333-4444', 
-    '1993-06-06', '男性', 'データエンジニア', '株式会社データエンジニア', '東京都北区36-36-36', 
-    'http://dataengineer.com', '{"instagram": "@mori"}', '{"color": "brown"}', '購入履歴18', 'メモ18', '独身', 
-    0, 22000000, '専門学校卒', '{"product18": "R"}', 1800
-),
-(
-    '橋本 十七郎', 'hashimoto@example.com', '東京都荒川区37-37-37', 'hashimoto@example.com', '010-5555-6666', 
-    '1984-07-07', '男性', 'システムアーキテクト', '株式会社システムアーキテクト', '東京都足立区38-38-38', 
-    'http://systemarchitect.com', '{"facebook": "hashimoto"}', '{"color": "black"}', '購入履歴19', 'メモ19', 
-    '既婚', 3, 23000000, '大学卒', '{"product19": "S"}', 1900
-),
-(
-    '山田 十八郎', 'yamada2@example.com', '東京都台東区39-39-39', 'yamada2@example.com', '090-7777-8888', 
-    '1979-08-08', '男性', 'ネットワークアーキテクト', '株式会社ネットワークアーキテクト', 
-    '東京都墨田区40-40-40', 'http://networkarchitect.com', '{"github": "yamada2"}', '{"color": "white"}', 
-    '購入履歴20', 'メモ20', '未亡人', 2, 24000000, '大学院卒', '{"product20": "T"}', 2000
-);
+('山田 太郎', 'yamada@example.com', '090-1234-5678', 
+'1980-01-01', '男性', 
+'独身', 0, 5000000, '大学卒', 100, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('佐藤 花子', 'sato@example.com', '080-9876-5432', 
+'1990-02-02', '女性', 
+'既婚', 2, 6000000, '専門学校卒', 200, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('田中 一郎', 'tanaka@example.com', '070-1111-2222', 
+'1985-03-03', '男性', '離婚', 1, 7000000, '大学院卒', 300, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('鈴木 次郎', 'suzuki@example.com', '060-3333-4444', 
+'1975-04-04', '男性', 
+'未亡人', 3, 8000000, '高校卒', 400, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('高橋 三郎', 'takahashi@example.com', '050-5555-6666', 
+'1995-05-05', '男性', 
+'独身', 0, 9000000, '専門学校卒', 500, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('伊藤 四郎', 'ito@example.com', '040-7777-8888', 
+'1988-06-06', '男性', '既婚', 1, 10000000, '大学卒', 600, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('渡辺 五郎', 'watanabe@example.com', '030-9999-0000', 
+'1970-07-07', '男性', '離婚', 2, 11000000, '大学院卒', 700, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('中村 六郎', 'nakamura@example.com', '020-1111-2222', 
+'1992-08-08', '男性', '独身', 0, 12000000, '専門学校卒', 800, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('小林 七郎', 'kobayashi@example.com', '010-3333-4444', 
+'1983-09-09', '男性', '既婚', 3, 13000000, '大学卒', 900, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('加藤 八郎', 'kato@example.com', '090-5555-6666', 
+'1978-10-10', '男性', '未亡人', 2, 14000000, '大学院卒', 1000, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('佐々木 九郎', 'sasaki@example.com', '090-6666-7777', 
+'1982-11-11', '男性', '独身', 0, 15000000, '大学卒', 1100, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('山本 十郎', 'yamamoto@example.com', '080-8888-9999', 
+'1991-12-12', '男性', '既婚', 2, 16000000, '専門学校卒', 1200, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('松本 十一郎', 'matsumoto@example.com', '070-2222-3333', 
+'1986-01-01', '男性', '離婚', 1, 17000000, '大学院卒', 1300, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('井上 十二郎', 'inoue@example.com', '060-4444-5555', 
+'1976-02-02', '男性', '未亡人', 3, 18000000, '高校卒', 1400, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('木村 十三郎', 'kimura@example.com', '050-6666-7777', 
+'1996-03-03', '男性', '独身', 0, 19000000, '専門学校卒', 1500, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('林 十四郎', 'hayashi@example.com', '040-8888-9999', 
+'1989-04-04', '男性', '既婚', 1, 20000000, '大学卒', 1600, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('清水 十五郎', 'shimizu@example.com', '030-0000-1111', 
+'1971-05-05', '男性', '離婚', 2, 21000000, '大学院卒', 1700, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('森 十六郎', 'mori@example.com', '020-3333-4444', 
+'1993-06-06', '男性', '独身', 0, 22000000, '専門学校卒', 1800, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('橋本 十七郎', 'hashimoto@example.com', '010-5555-6666', 
+'1984-07-07', '男性', '既婚', 3, 23000000, '大学卒', 1900, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('山田 十八郎', 'yamada2@example.com', '090-7777-8888', 
+'1979-08-08', '男性', '未亡人', 2, 24000000, '大学院卒', 2000, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 
--- 顧客に関連するメモの初期データを挿入
+-- 顧客のソーシャルメディア情報の初期データを挿入
+INSERT INTO customer_social_media (customer_id, social_media_handles)
+VALUES 
+(1, JSON_OBJECT('twitter', '@yamada')),
+(2, JSON_OBJECT('instagram', '@sato')),
+(3, JSON_OBJECT('linkedin', 'tanaka')),
+(4, JSON_OBJECT('facebook', 'suzuki')),
+(5, JSON_OBJECT('github', 'takahashi')),
+(6, JSON_OBJECT('twitter', '@ito')),
+(7, JSON_OBJECT('linkedin', 'watanabe')),
+(8, JSON_OBJECT('instagram', '@nakamura')),
+(9, JSON_OBJECT('facebook', 'kobayashi')),
+(10, JSON_OBJECT('github', 'kato')),
+(11, JSON_OBJECT('twitter', '@sasaki')),
+(12, JSON_OBJECT('instagram', '@yamamoto')),
+(13, JSON_OBJECT('linkedin', 'matsumoto')),
+(14, JSON_OBJECT('facebook', 'inoue')),
+(15, JSON_OBJECT('github', 'kimura')),
+(16, JSON_OBJECT('twitter', '@hayashi')),
+(17, JSON_OBJECT('linkedin', 'shimizu')),
+(18, JSON_OBJECT('instagram', '@mori')),
+(19, JSON_OBJECT('facebook', 'hashimoto')),
+(20, JSON_OBJECT('github', 'yamada2'));
+
+-- 顧客の好みの初期データを挿入
+INSERT INTO customer_preferences (customer_id, preferences)
+VALUES 
+(1, JSON_OBJECT('color', '青')),
+(2, JSON_OBJECT('color', '赤')),
+(3, JSON_OBJECT('color', '緑')),
+(4, JSON_OBJECT('color', '黄色')),
+(5, JSON_OBJECT('color', '紫')),
+(6, JSON_OBJECT('color', 'オレンジ')),
+(7, JSON_OBJECT('color', 'ピンク')),
+(8, JSON_OBJECT('color', '茶色')),
+(9, JSON_OBJECT('color', '黒')),
+(10, JSON_OBJECT('color', '白')),
+(11, JSON_OBJECT('color', '青')),
+(12, JSON_OBJECT('color', '赤')),
+(13, JSON_OBJECT('color', '緑')),
+(14, JSON_OBJECT('color', '黄色')),
+(15, JSON_OBJECT('color', '紫')),
+(16, JSON_OBJECT('color', 'オレンジ')),
+(17, JSON_OBJECT('color', 'ピンク')),
+(18, JSON_OBJECT('color', '茶色')),
+(19, JSON_OBJECT('color', '黒')),
+(20, JSON_OBJECT('color', '白'));
+
+-- 顧客の購入履歴の初期データを挿入
+INSERT INTO customer_purchase_history (customer_id, purchase_history)
+VALUES 
+(1, '2023-01-01: 商品A, 2023-02-01: 商品B'),
+(2, '2023-01-02: 商品C, 2023-02-02: 商品D'),
+(3, '2023-01-03: 商品E, 2023-02-03: 商品F'),
+(4, '2023-01-04: 商品G, 2023-02-04: 商品H'),
+(5, '2023-01-05: 商品I, 2023-02-05: 商品J'),
+(6, '2023-01-06: 商品K, 2023-02-06: 商品L'),
+(7, '2023-01-07: 商品M, 2023-02-07: 商品N'),
+(8, '2023-01-08: 商品O, 2023-02-08: 商品P'),
+(9, '2023-01-09: 商品Q, 2023-02-09: 商品R'),
+(10, '2023-01-10: 商品S, 2023-02-10: 商品T'),
+(11, '2023-01-11: 商品U, 2023-02-11: 商品V'),
+(12, '2023-01-12: 商品W, 2023-02-12: 商品X'),
+(13, '2023-01-13: 商品Y, 2023-02-13: 商品Z'),
+(14, '2023-01-14: 商品AA, 2023-02-14: 商品BB'),
+(15, '2023-01-15: 商品CC, 2023-02-15: 商品DD'),
+(16, '2023-01-16: 商品EE, 2023-02-16: 商品FF'),
+(17, '2023-01-17: 商品GG, 2023-02-17: 商品HH'),
+(18, '2023-01-18: 商品II, 2023-02-18: 商品JJ'),
+(19, '2023-01-19: 商品KK, 2023-02-19: 商品LL'),
+(20, '2023-01-20: 商品MM, 2023-02-20: 商品NN');
+
+-- 顧客のメモの初期データを挿入
 INSERT INTO customer_notes (customer_id, note)
 VALUES 
-(1, '山田太郎のメモ1'),
-(2, '佐藤花子のメモ2'),
-(3, '田中一郎のメモ3'),
-(4, '鈴木次郎のメモ4'),
-(5, '高橋三郎のメモ5'),
-(6, '伊藤四郎のメモ6'),
-(7, '渡辺五郎のメモ7'),
-(8, '中村六郎のメモ8'),
-(9, '小林七郎のメモ9'),
-(10, '加藤八郎のメモ10'),
-(11, '佐々木九郎のメモ11'),
-(12, '山本十郎のメモ12'),
-(13, '松本十一郎のメモ13'),
-(14, '井上十二郎のメモ14'),
-(15, '木村十三郎のメモ15'),
-(16, '林十四郎のメモ16'),
-(17, '清水十五郎のメモ17'),
-(18, '森十六郎のメモ18'),
-(19, '橋本十七郎のメモ19'),
-(20, '山田十八郎のメモ20');
+(1, '山田太郎は新製品に興味がある'),
+(2, '佐藤花子は割引を好む'),
+(3, '田中一郎は迅速な配送を求めている'),
+(4, '鈴木次郎は高品質の商品を好む'),
+(5, '高橋三郎は新しい技術に興味がある'),
+(6, '伊藤四郎はカスタマーサービスに満足している'),
+(7, '渡辺五郎は定期的な購入をしている'),
+(8, '中村六郎は特定のブランドを好む'),
+(9, '小林七郎は環境に優しい商品を求めている'),
+(10, '加藤八郎はオンラインショッピングを好む'),
+(11, '佐々木九郎は店舗での購入を好む'),
+(12, '山本十郎は新製品の情報を求めている'),
+(13, '松本十一郎は高級品を好む'),
+(14, '井上十二郎はセール情報を求めている'),
+(15, '木村十三郎はカスタマイズ可能な商品を好む'),
+(16, '林十四郎は迅速な対応を求めている'),
+(17, '清水十五郎は特定のカテゴリーの商品を好む'),
+(18, '森十六郎は新しいトレンドに敏感である'),
+(19, '橋本十七郎は定期的なメンテナンスを求めている'),
+(20, '山田十八郎は特定のデザインを好む');
 
--- 顧客に関連するリマインダーの初期データを挿入
-INSERT INTO customer_reminders (customer_id, reminder, reminder_date)
+-- 顧客のリマインダーの初期データを挿入
+INSERT INTO customer_reminders (customer_id, reminder, reminder_date, created_at)
 VALUES 
-(1, '山田太郎のリマインダー1', '2024-10-01'),
-(2, '佐藤花子のリマインダー2', '2024-11-01'),
-(3, '田中一郎のリマインダー3', '2024-12-01'),
-(4, '鈴木次郎のリマインダー4', '2025-01-01'),
-(5, '高橋三郎のリマインダー5', '2025-02-01'),
-(6, '伊藤四郎のリマインダー6', '2025-03-01'),
-(7, '渡辺五郎のリマインダー7', '2025-04-01'),
-(8, '中村六郎のリマインダー8', '2025-05-01'),
-(9, '小林七郎のリマインダー9', '2025-06-01'),
-(10, '加藤八郎のリマインダー10', '2025-07-01'),
-(11, '佐々木九郎のリマインダー11', '2025-08-01'),
-(12, '山本十郎のリマインダー12', '2025-09-01'),
-(13, '松本十一郎のリマインダー13', '2025-10-01'),
-(14, '井上十二郎のリマインダー14', '2025-11-01'),
-(15, '木村十三郎のリマインダー15', '2025-12-01'),
-(16, '林十四郎のリマインダー16', '2026-01-01'),
-(17, '清水十五郎のリマインダー17', '2026-02-01'),
-(18, '森十六郎のリマインダー18', '2026-03-01'),
-(19, '橋本十七郎のリマインダー19', '2026-04-01'),
-(20, '山田十八郎のリマインダー20', '2026-05-01');
+(1, '次回の購入は2024-10-01', '2024-10-01', CURRENT_TIMESTAMP),
+(2, '次回の購入は2024-11-01', '2024-11-01', CURRENT_TIMESTAMP),
+(3, '次回の購入は2024-12-01', '2024-12-01', CURRENT_TIMESTAMP),
+(4, '次回の購入は2025-01-01', '2025-01-01', CURRENT_TIMESTAMP),
+(5, '次回の購入は2025-02-01', '2025-02-01', CURRENT_TIMESTAMP),
+(6, '次回の購入は2025-03-01', '2025-03-01', CURRENT_TIMESTAMP),
+(7, '次回の購入は2025-04-01', '2025-04-01', CURRENT_TIMESTAMP),
+(8, '次回の購入は2025-05-01', '2025-05-01', CURRENT_TIMESTAMP),
+(9, '次回の購入は2025-06-01', '2025-06-01', CURRENT_TIMESTAMP),
+(10, '次回の購入は2025-07-01', '2025-07-01', CURRENT_TIMESTAMP),
+(11, '次回の購入は2025-08-01', '2025-08-01', CURRENT_TIMESTAMP),
+(12, '次回の購入は2025-09-01', '2025-09-01', CURRENT_TIMESTAMP),
+(13, '次回の購入は2025-10-01', '2025-10-01', CURRENT_TIMESTAMP),
+(14, '次回の購入は2025-11-01', '2025-11-01', CURRENT_TIMESTAMP),
+(15, '次回の購入は2025-12-01', '2025-12-01', CURRENT_TIMESTAMP),
+(16, '次回の購入は2026-01-01', '2026-01-01', CURRENT_TIMESTAMP),
+(17, '次回の購入は2026-02-01', '2026-02-01', CURRENT_TIMESTAMP),
+(18, '次回の購入は2026-03-01', '2026-03-01', CURRENT_TIMESTAMP),
+(19, '次回の購入は2026-04-01', '2026-04-01', CURRENT_TIMESTAMP),
+(20, '次回の購入は2026-05-01', '2026-05-01', CURRENT_TIMESTAMP);
