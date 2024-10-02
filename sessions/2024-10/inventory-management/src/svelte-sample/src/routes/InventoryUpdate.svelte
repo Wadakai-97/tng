@@ -73,7 +73,7 @@
         color: #1d1d1f;
         margin-left: 10px;
         margin-right: 10px;
-        min-width: 900px;
+        min-width: 1500px;
     }
     .title {
         font-size: 28px;
