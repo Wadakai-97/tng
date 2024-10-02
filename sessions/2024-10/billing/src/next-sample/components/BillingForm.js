@@ -1,39 +1,72 @@
 import React from 'react';
+import styles from '../styles/BillingForm.module.css';
 
-export default function BillingForm({ productList, selectedProduct, onProductSelect, quantity, onQuantityChange }) {
+export default function BillingForm({ products, onProductSelect, onQuantityChange, onAddProduct, onRemoveProduct }) {
   return (
     <div>
-      <label>
-        商品を選択:
-        <select onChange={(e) => onProductSelect(e.target.value)} defaultValue="">
-          <option value="" disabled>商品を選択してください</option>
-          {productList.map((product) => (
-            <option key={product.id} value={product.id}>
-              {product.name}
-            </option>
+      <table className={styles.table}>
+        <thead>
+          <tr>
+            <th className={`${styles.th} ${styles.selectColumn}`}>商品を選択</th>
+            <th className={`${styles.th} ${styles.descriptionColumn}`}>説明</th>
+            <th className={`${styles.th} ${styles.priceColumn}`}>単価</th>
+            <th className={`${styles.th} ${styles.taxColumn}`}>税率</th>
+            <th className={`${styles.th} ${styles.discountColumn}`}>割引率</th>
+            <th className={`${styles.th} ${styles.quantityColumn}`}>数量</th>
+            <th className={`${styles.th} ${styles.actionColumn}`}>操作</th>
+          </tr>
+        </thead>
+        <tbody>
+          {products.map((product, index) => (
+            <tr key={index} className={styles.row}>
+              <td className={`${styles.td} ${styles.selectColumn}`}>
+                <select
+                  className={styles.select}
+                  onChange={(e) => onProductSelect(index, e.target.value)}
+                  value={product.id || ''}
+                >
+                  <option value="" disabled>商品を選択してください</option>
+                  {product.productList.map((prod) => (
+                    <option key={prod.id} value={prod.id}>
+                      {prod.name}
+                    </option>
+                  ))}
+                </select>
+              </td>
+              <td className={`${styles.td} ${styles.descriptionColumn}`}>
+                {product.id ? product.description : '---'}
+              </td>
+              <td className={`${styles.td} ${styles.priceColumn}`}>
+                {product.id ? `${product.unitPrice.toLocaleString()}円` : '---'}
+              </td>
+              <td className={`${styles.td} ${styles.taxColumn}`}>
+                {product.id ? `${product.taxRate * 100}%` : '---'}
+              </td>
+              <td className={`${styles.td} ${styles.discountColumn}`}>
+                {product.id ? `${product.discountRate * 100}%` : '---'}
+              </td>
+              <td className={`${styles.td} ${styles.quantityColumn}`}>
+                <select
+                  className={styles.select}
+                  value={product.quantity}
+                  onChange={(e) => onQuantityChange(index, parseInt(e.target.value))}
+                  disabled={!product.id}
+                >
+                  {[...Array(10).keys()].map((num) => (
+                    <option key={num + 1} value={num + 1}>
+                      {num + 1}
+                    </option>
+                  ))}
+                </select>
+              </td>
+              <td className={`${styles.td} ${styles.actionColumn}`}>
+                <button onClick={() => onRemoveProduct(index)} className={styles.button}>削除</button>
+              </td>
+            </tr>
           ))}
-        </select>
-      </label>
-
-      {selectedProduct && (
-        <div style={{ marginTop: '20px' }}>
-          <p>商品名: {selectedProduct.name}</p>
-          <p>説明: {selectedProduct.description}</p>
-          <p>単価: {selectedProduct.unitPrice}円</p>
-          <p>税率: {selectedProduct.taxRate * 100}%</p>
-          <p>割引率: {selectedProduct.discountRate * 100}%</p>
-          <label>
-            数量:
-            <select value={quantity} onChange={(e) => onQuantityChange(parseInt(e.target.value))}>
-              {[...Array(10).keys()].map((num) => (
-                <option key={num + 1} value={num + 1}>
-                  {num + 1}
-                </option>
-              ))}
-            </select>
-          </label>
-        </div>
-      )}
+        </tbody>
+      </table>
+      <button onClick={onAddProduct} className={styles.addButton}>＋ 商品を追加</button>
     </div>
   );
 }
