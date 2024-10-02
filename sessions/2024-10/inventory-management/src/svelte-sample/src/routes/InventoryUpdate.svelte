@@ -25,6 +25,13 @@
         { product_id: 20, product_name: 'トイレットペーパー', category: 'トイレ用品', stock_quantity: 2000, warehouse_name: '甲府倉庫', last_updated: '2024-10-20', manager_name: '橋本 十八' },
     ];
 
+    // カテゴリのリスト
+    const categories = [
+        '食品', '飲料', '日用品', '家電', '家具', '衣料品', '書籍', '文房具', '玩具', 'スポーツ用品', 
+        'アウトドア用品', '化粧品', '医薬品', 'ペット用品', '園芸用品', '自動車用品', 'オフィス用品', 
+        'キッチン用品', 'バス用品', 'トイレ用品'
+    ];
+
     // Svelteのストア
     const inventory = writable(sampleInventory);
     const searchName = writable('');
@@ -92,7 +99,7 @@
     .search-field {
         margin-bottom: 20px;
     }
-    .search-input {
+    .search-input, .search-select {
         width: 100%;
         padding: 10px;
         border: 1px solid #d1d1d6;
@@ -143,7 +150,12 @@
         </div>
         <div class="search-field">
             <label for="searchCategory">カテゴリ</label>
-            <input type="text" id="searchCategory" bind:value={$searchCategory} class="search-input" />
+            <select id="searchCategory" bind:value={$searchCategory} class="search-select">
+                <option value="">すべて</option>
+                {#each categories as category}
+                    <option value={category}>{category}</option>
+                {/each}
+            </select>
         </div>
     </div>
     <table class="inventory-table">
