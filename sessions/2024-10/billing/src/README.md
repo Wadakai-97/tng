@@ -6,3 +6,9 @@ npx create-next-app@latest firstname-lastname
 
 ## アプリケーション起動
 npm run dev
+
+# Astroで始める場合
+npm create astro@latest
+
+## アプリケーション起動
+npm run dev
