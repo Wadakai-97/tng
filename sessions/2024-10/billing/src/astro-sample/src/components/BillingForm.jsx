@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from '../styles/BillingForm.module.css';
 
-export default function BillingForm({ products, onProductSelect, onQuantityChange, onAddProduct, onRemoveProduct }) {
+export default function BillingForm({ products = [], onProductSelect, onQuantityChange, onAddProduct, onRemoveProduct }) {
   return (
     <div>
       <table className={styles.table}>
@@ -37,7 +37,7 @@ export default function BillingForm({ products, onProductSelect, onQuantityChang
                 {product.id ? product.description : '---'}
               </td>
               <td className={`${styles.td} ${styles.priceColumn}`}>
-                {product.id ? `${product.unitPrice}円` : '---'}
+                {product.id ? `${product.unitPrice.toLocaleString()}円` : '---'}
               </td>
               <td className={`${styles.td} ${styles.taxColumn}`}>
                 {product.id ? `${product.taxRate}%` : '---'}
