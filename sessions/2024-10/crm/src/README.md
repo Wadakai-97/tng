@@ -18,3 +18,10 @@ ng generate component component-name --standalone
 
 ## アプリケーション起動
 ng serve
+
+# Vueで始める場合
+vue create my-vue-app firstname-lastname
+例）名前が山田太郎の場合、 mkdir taro-yamada
+
+## アプリケーション起動
+npm run serve
