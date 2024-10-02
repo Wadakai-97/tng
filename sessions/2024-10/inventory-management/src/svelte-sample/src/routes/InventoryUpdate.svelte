@@ -98,6 +98,7 @@
     }
     .search-field {
         margin-bottom: 20px;
+        margin-right: 20px;
     }
     .search-input, .search-select {
         width: 100%;
@@ -105,6 +106,10 @@
         border: 1px solid #d1d1d6;
         border-radius: 8px;
         font-size: 16px;
+    }
+    .search-fields {
+        display: flex;
+        gap: 20px;
     }
     .inventory-table {
         width: 100%;
@@ -144,18 +149,20 @@
         {/if}
     </button>
     <div class="search-container" class:hidden={!$isSearchVisible}>
-        <div class="search-field">
-            <label for="searchName">商品名</label>
-            <input type="text" id="searchName" bind:value={$searchName} class="search-input" />
-        </div>
-        <div class="search-field">
-            <label for="searchCategory">カテゴリ</label>
-            <select id="searchCategory" bind:value={$searchCategory} class="search-select">
-                <option value="">すべて</option>
-                {#each categories as category}
-                    <option value={category}>{category}</option>
-                {/each}
-            </select>
+        <div class="search-fields">
+            <div class="search-field">
+                <label for="searchName">商品名</label>
+                <input type="text" id="searchName" bind:value={$searchName} class="search-input" />
+            </div>
+            <div class="search-field">
+                <label for="searchCategory">カテゴリ</label>
+                <select id="searchCategory" bind:value={$searchCategory} class="search-select">
+                    <option value="">すべて</option>
+                    {#each categories as category}
+                        <option value={category}>{category}</option>
+                    {/each}
+                </select>
+            </div>
         </div>
     </div>
     <table class="inventory-table">
