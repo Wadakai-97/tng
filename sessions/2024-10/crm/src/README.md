@@ -14,7 +14,7 @@ ng new firstname-lastname
 例）名前が山田太郎の場合、 mkdir taro-yamada
 
 ## コンポーネント作成
-ng generate component file-name
+ng generate component component-name --standalone
 
 ## アプリケーション起動
 ng serve

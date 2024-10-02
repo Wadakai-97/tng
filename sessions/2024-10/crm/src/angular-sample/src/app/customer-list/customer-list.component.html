@@ -1,0 +1,48 @@
+<div class="customer-list-container">
+  <h1 class="title">顧客一覧</h1>
+  <button (click)="toggleSearch()" class="toggle-search-button">
+    {{ isSearchVisible ? '検索条件：表示' : '検索条件：非表示' }}
+  </button>
+  <div class="search-container" [ngClass]="{ 'visible': isSearchVisible, 'hidden': !isSearchVisible }">
+    <div class="search-field-name">
+      <label for="searchName">氏名</label>
+      <input
+        type="text"
+        id="searchName"
+        [(ngModel)]="searchName"
+        class="search-input"
+      />
+    </div>
+    <div class="search-field-email">
+      <label for="searchEmail">メールアドレス</label>
+      <input
+        type="text"
+        id="searchEmail"
+        [(ngModel)]="searchEmail"
+        class="search-input"
+      />
+    </div>
+  </div>
+  <table class="customer-table">
+    <thead>
+      <tr>
+        <th>顧客ID</th>
+        <th>氏名</th>
+        <th>メールアドレス</th>
+        <th>メモ</th>
+        <th>詳細</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let customer of filteredCustomers">
+        <td>{{ customer.id }}</td>
+        <td>{{ customer.name }}</td>
+        <td>{{ customer.email }}</td>
+        <td>{{ customer.note }}</td>
+        <td>
+          <button class="detail-button">詳細</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
