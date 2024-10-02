@@ -1,5 +1,5 @@
 <script>
-    import CustomerList from './CustomerList.svelte';
+    import CustomerList from './InventoryUpdate.svelte';
 </script>
 
 <CustomerList />
